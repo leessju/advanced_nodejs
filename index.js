@@ -5,11 +5,13 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 
+
 const app = express();
 const auth = require('./routes/authRoutes');
 const blog = require('./routes/blogRoutes');
 
 require('./services/passport');
+require('./services/cache');
 
 mongoose.Promise = global.Promise;
 mongoose
