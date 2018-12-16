@@ -23,9 +23,9 @@ passport.use(
     }, async (accessToken, refreshToken, profile, done) => {
 
       const profile_s = JSON.stringify(profile);
-      console.log(`accessToken : ${accessToken}`);
-      console.log(`refreshToken : ${refreshToken}`);
-      console.log(`profile : ${profile_s}`);
+      // console.log(`accessToken : ${accessToken}`);
+      // console.log(`refreshToken : ${refreshToken}`);
+      // console.log(`profile : ${profile_s}`);
 
       try {
         const existingUser = await User.findOne({ googleId: profile.id });

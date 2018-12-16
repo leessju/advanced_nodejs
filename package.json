@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "testEnvironment": "node",
+    "setupTestFrameworkScriptFile": "./tests/setup.js"
+  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js --ignore tests",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +29,7 @@
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.4",
     "jest": "^23.6.0",
+    "keygrip": "^1.0.3",
     "migrate-mongoose": "^3.2.2",
     "mongoose": "^5.3.16",
     "nodemon": "^1.18.8",
@@ -32,6 +38,7 @@
     "path-parser": "^4.2.0",
     "puppeteer": "^1.11.0",
     "redis": "^2.8.0",
+    "safe-buffer": "^5.1.2",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
